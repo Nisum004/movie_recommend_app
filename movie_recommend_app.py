@@ -18,7 +18,7 @@ def recommend(movie):
 
     for i in movie_indices:
         recommended_movies.append(movies.iloc[i[0]].Series_Title)
-        recommended_movies_poster.append(movies.iloc[i[0]].Poster_Link)  # Fetch posters from dataset
+        recommended_movies_poster.append(movies.iloc[i[0]].Poster_Link) 
 
     return recommended_movies, recommended_movies_poster
 
@@ -37,5 +37,5 @@ if st.button("Recommend"):
     cols = st.columns(5)  # Create 5 columns for posters
     for i in range(len(movie_names)):
         with cols[i]:  # Assign each movie to a column
-            st.image(movie_posters[i], use_column_width=True)  # ✅ Fixed deprecation issue
+            st.image(movie_posters[i], use_container_width=True)  
             st.write(movie_names[i])
